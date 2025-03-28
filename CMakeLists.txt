@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Set paths for SFML (adjust these paths according to your setup)
-set(SFML_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/External/SFML/include)
-set(SFML_LIB_DIR ${CMAKE_SOURCE_DIR}/External/SFML/lib)
+set(SFML_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/YinPad/External/SFML/include)
+set(SFML_LIB_DIR ${CMAKE_SOURCE_DIR}/YinPad/External/SFML/lib)
 
 # Add include directories (SFML headers)
 include_directories(${SFML_INCLUDE_DIR})
