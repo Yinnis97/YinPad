@@ -37,6 +37,6 @@ target_link_libraries(YinPad
 # Copy the required DLLs after build
 add_custom_command(TARGET YinPad POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy
-    ${CMAKE_SOURCE_DIR}/*.dll
+    ${CMAKE_SOURCE_DIR}/YinPad/*.dll
     $<TARGET_FILE_DIR:YinPad>
 )
