@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  build:
+    runs-on: windows-latest 
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  
+
+      - name: Set up MSVC 
+        uses: ilammy/msvc-dev-cmd@v1  
+
+      - name: Compile C++ Code
+        run: |
+          cl /EHsc /Fe:YinPad.exe main.cpp 
+
+      - name: Upload EXE as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: YinPad
+          path: YinPad.exe
+
+  release:
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - name: Download EXE
+        uses: actions/download-artifact@v4
+        with:
+          name: YinPad
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: YinPad.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
