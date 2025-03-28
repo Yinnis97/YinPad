@@ -41,5 +41,6 @@ add_custom_command(TARGET YinPad POST_BUILD
     ${CMAKE_SOURCE_DIR}/YinPad/sfml-window-2.dll
 	${CMAKE_SOURCE_DIR}/YinPad/openal32.dll
 	${CMAKE_SOURCE_DIR}/YinPad/sfml-audio-2.dll 
+	${CMAKE_SOURCE_DIR}/YinPad/sfml-system-2.dll 
     $<TARGET_FILE_DIR:YinPad>
 )
