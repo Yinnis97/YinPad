@@ -37,6 +37,9 @@ target_link_libraries(YinPad
 # Copy the required DLLs after build
 add_custom_command(TARGET YinPad POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy
-    ${CMAKE_SOURCE_DIR}/YinPad/*.dll
+    ${CMAKE_SOURCE_DIR}/YinPad/sfml-graphics-2.dll
+    ${CMAKE_SOURCE_DIR}/YinPad/sfml-window-2.dll
+	${CMAKE_SOURCE_DIR}/YinPad/openal32.dll
+	${CMAKE_SOURCE_DIR}/YinPad/sfml-audio-2.dll 
     $<TARGET_FILE_DIR:YinPad>
 )
