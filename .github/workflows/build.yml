@@ -19,9 +19,9 @@ jobs:
       - name: List project files
         run: |
          dir
-         dir External
-         dir External\SFML
-         dir External\SFML\include
+         dir YinPad\External
+         dir YinPad\External\SFML
+         dir YinPad\External\SFML\include
 
       - name: Build with CMake
         run: |
