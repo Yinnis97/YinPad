@@ -15,6 +15,13 @@ jobs:
 
       - name: Set up MSVC (Visual Studio C++ Compiler)
         uses: ilammy/msvc-dev-cmd@v1 
+        
+      - name: List project files
+        run: |
+         dir
+         dir External
+         dir External\SFML
+         dir External\SFML\include
 
       - name: Build with CMake
         run: |
