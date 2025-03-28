@@ -41,5 +41,7 @@ jobs:
           name: YinPad
           path: |
             build/Release/YinPad.exe  
-            build/Release/*.dll           
+            build/Release/*.dll    
+            build/Release/Shaders/*
+            build/Release/Fonts/*            
 
