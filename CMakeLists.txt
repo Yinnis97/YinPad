@@ -47,13 +47,13 @@ add_custom_command(TARGET YinPad POST_BUILD
 # Copy the required shaders after build
 add_custom_command(TARGET YinPad POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/YinPad/Shaders/Background.frag
+    ${CMAKE_SOURCE_DIR}/YinPad/Shaders
     $<TARGET_FILE_DIR:YinPad>/Shaders
 )
 
 # Copy the required fonts after build
 add_custom_command(TARGET YinPad POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
-    ${CMAKE_SOURCE_DIR}/YinPad/Fonts/PixeloidSans.ttf
+    ${CMAKE_SOURCE_DIR}/YinPad/Fonts
     $<TARGET_FILE_DIR:YinPad>/Fonts
 )
