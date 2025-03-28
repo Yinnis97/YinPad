@@ -3,18 +3,18 @@ name: Build and Release
 on:
   push:
     branches:
-      - master 
+      - master  
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest 
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Set up MSVC (Visual Studio C++ Compiler)
-        uses: ilammy/msvc-dev-cmd@v1  
+        uses: ilammy/msvc-dev-cmd@v1 
 
       - name: Build with CMake
         run: |
@@ -25,13 +25,14 @@ jobs:
 
       - name: Copy SFML DLLs to Build Folder
         run: |
-          copy *.dll build\Release\  
+         
+          copy *.dll build\Release\
 
       - name: Upload EXE and DLLs as Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MyApp
-          path: 
-            - build/Release/YinPad.exe
-            - build/Release/sfml/*.dll  
+          name: YinPad
+          path:
+            - build/Release/YinPad.exe 
+            - build/Release/*.dll        
 
