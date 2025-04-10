@@ -8,8 +8,13 @@
 #include <SFML/Network.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/System.hpp>
+#include "Options.h"
 
 using namespace sf;
+
+#define TextBox_Y 20
+#define TextColor Black
+#define OutlineThickness_Options_H 3.0
 
 class YinPad
 {
@@ -24,14 +29,18 @@ class YinPad
 		Vector2i mousePosWindow;
 		Vector2f mousePosView;
 
-		// Variables
+		// Shapes
 		RectangleShape Background;
+		RectangleShape TextWindow;
+		RectangleShape Options_Horizontal;
+		RectangleShape Options_Vertical;
+
+		// Variables
 		std::string input_text;
 		Text text;
 		bool CTRL_Pressed;
 
 		// Saving and Loading
-		FILE file;
 
 		// Shader
 		Shader Background_Shader;
@@ -45,9 +54,11 @@ class YinPad
 		void Initialize_Window();
 		void Initialize_Variables();
 		void Initialize_Background();
+		void Initialize_Sections();
 
 		void PollEvents();
 
+		Vector2f GetMousePos();
 		const bool Running();
 
 		void Update();

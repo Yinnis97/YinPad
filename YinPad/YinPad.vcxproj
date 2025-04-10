@@ -134,9 +134,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Options.cpp" />
     <ClCompile Include="YinPad.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Options.h" />
     <ClInclude Include="YinPad.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

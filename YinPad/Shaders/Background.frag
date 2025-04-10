@@ -13,8 +13,8 @@ void main()
 	vec2 Mouse_st = u_mouse / u_resolution;
 
 	
-	float a = smoothstep(0.0,1.0,st.y-0.6);
+	// float a = smoothstep(0.0,1.0,st.y-0.6);
 
 
-    gl_FragColor = vec4(0.0,0.0,abs(sin( (a) )),1.0);
+    gl_FragColor = vec4(0.0,0.0,st.y,1.0);
 }
